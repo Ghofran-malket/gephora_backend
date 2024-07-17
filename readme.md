@@ -15,8 +15,8 @@ Follow these steps to get a copy of the project up and running on your local mac
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
+    git clone https://github.com/Ghofran-malket/gephora_backend.git
+    cd gephora_backend
     ```
 
 2. **Install dependencies:**
@@ -28,4 +28,16 @@ Follow these steps to get a copy of the project up and running on your local mac
     Copy .env.local to .env and configure the necessary settings, particularly the database connection parameters.
     ```bash
     cp .env.local .env
+    ```
+
+6. **Start the Symfony server:**
+
+    ```bash
+    symfony server:start
+    ```
+
+    Or using PHP's built-in server:
+
+    ```bash
+    php -S localhost:8000 -t public
     ```
