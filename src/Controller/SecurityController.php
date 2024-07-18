@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\{JsonResponse, Response, Request};
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\CurrentUser;
 use Symfony\Component\Serializer\SerializerInterface;
 
 
@@ -30,6 +31,19 @@ class SecurityController extends AbstractController
         return new JsonResponse(
             ['user'=> $user->getUserIdentifier(), 'apiToken' => $user->getApiToken(), 'role'=> $user->getRoles()],
             Response::HTTP_CREATED
+        );
+    }
+
+    #[Route('/login', name: 'login', methods: 'POST')]
+    public function login(#[CurrentUser] ?User $user): JsonResponse {
+        if (null === $user) {
+            return new JsonResponse([
+                'message' => 'missing credentials',
+            ], Response::HTTP_UNAUTHORIZED);
+        }
+
+        return new JsonResponse(
+            ['user'=> $user->getUserIdentifier(), 'apiToken' => $user->getApiToken(), 'role'=> $user->getRoles()]
         );
     }
 }
