@@ -1,0 +1,96 @@
+@import url('../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css');
+@import 'custom';
+
+html{
+    position:relative;
+    min-height: 100%;
+}
+
+main {
+    margin-bottom:350px;
+}
+footer.footer {
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+}
+
+p{
+    font-family: $font-family-serif;
+    font-size: 18px;
+}
+
+.hero-scene {
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        top:0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url('../../images/hero-scene-1.jpg');
+        background-size: cover;
+        filter: brightness(0.5);
+    }
+    * {
+        position: relative;
+    }
+    .hero-scene-content{
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+.image-size{
+    height: 150px;
+    width: 150px;
+}
+.display{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.image-card{
+    position:relative;
+    width: 150px;
+    height: 150px;
+    &:hover{
+        .titre-image{
+            opacity: 1;
+        }
+        img{
+            filter: brightness(0.3);
+        }
+    }
+
+    img{
+        transition: all 0.3s;
+    }
+
+    .titre-image{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-55%, -50%);
+        opacity: 0;
+        transition: all 0.3s;
+        width: 90%;
+        margin: 0 10px;
+    }
+}
+
+.form-label{
+    color: $primary;
+}

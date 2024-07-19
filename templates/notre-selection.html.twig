@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+{% block title %}Notre Selection{% endblock %}
+
+{% block content %}
+<div id="#main-page">
+    <div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Notre Selection</h1>
+    </div>
+</div>
+
+<div class="container p-4">
+    <div class="text-center" data-show="admin"> <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#editionProductModal">Ajouter un produit</button> </div>
+
+    <div class="row row-cols-2 row-cols-lg-4 align-items-center mt-4 g-5" id="allProducts">
+    </div>
+
+    <!--Modal pour ajouer des produits et pour modifier un produit-->
+    <div class="modal fade" id="editionProductModal" tabindex="-1" aria-labelledby="editionProductModallabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="editionProductModallabel">Ajouter un produit</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form>
+                            <div class="mb-3"> 
+                                <label for="nameProductInput" class="form-label">Product:</label>
+                                <input type="text" class="form-control" id="nameProductInput" placeholder="Maskara">
+                            </div>
+                            <div class="mb-3"> 
+                                <label for="DescriptionInput" class="form-label">Description:</label>
+                                <textarea rows="4" cols="50" class="form-control text-start" id="DescriptionInput">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus risus nec ipsum ornare, a tempor diam consequat. Quisque ut imperdiet neque. Aenean nec diam elementum, tempor massa ac, imperdieaugue. Praesent mattis orem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus risus nec ipsum ornare, a tempor diam consequat.</textarea>
+                            </div>
+                            <div class="mb-3"> 
+                                <label for="priceProductInput" class="form-label">Price:</label>
+                                <input type="text" class="form-control" id="priceProductInput" placeholder="30.50$">
+                            </div>
+                            <div class="mb-3"> 
+                                <label for="ImageInput" class="form-label">Image</label> 
+                                <input type="file" class="form-control" id="ImageInput"> 
+                            </div>
+                            <div class="text-center"> 
+                                <button type="button" class="btn btn-primary">enregistrer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal pour supprimer des produit-->
+    <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModallabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="deleteProductModallabel">êtes-vous sûr de vouloir supprimer ce produit?</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form>
+                            <div class="mb-3"> 
+                                <p>Mascara</p>
+                                <img src="../images/article-1.jpg" class="rounded w-100" />
+                            </div>
+                            <div class="text-center"> 
+                                <button type="button" class="btn btn-danger">Suprimer</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Annuler</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal pour visualiser des produit-->
+    <div class="modal fade" id="showProductModal" tabindex="-1" aria-labelledby="showProductModallabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="showProductModallabel">Mascara L’Oréal</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form>
+                            <div class="mb-3">
+                                <img src="../images/article-1.jpg" class="rounded w-100" />
+                                <h4 class="text-dark mt-3">Price: 30.50$</h4>
+                                <p class="text-dark mt-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus risus nec ipsum ornare, 
+                                    a tempor diam consequat. Quisque ut imperdiet neque. Aenean nec diam elementum, tempor massa ac, 
+                                    imperdieaugue. Praesent mattis orem ipsum dolor sit amet, 
+                                    consectetur adipiscing elit. Sed tempus risus nec ipsum ornare, a tempor diam consequat.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -11,6 +11,10 @@ class DefaultController extends AbstractController
     #[Route('/')]
     public function home() : Response
     {
-        return new Response("Bienvenue sur votre accueil !");
+        $number = rand(0, 100);
+	    return $this->render('notre-selection.html.twig', [
+    	  	'number' => $number,
+	    ]);
+       
     }
 }

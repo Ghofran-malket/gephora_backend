@@ -1,0 +1,10 @@
+// Include any default variable overrides here (though functions won't be available)
+$primary: #AA1945;
+$secondary: #F1CED4;
+$dark: #391306;
+$light: #F9CCD3;
+
+$font-family-sans-serif: 'Lora', sans-serif !default;
+$font-family-serif: 'Hind Madurai', serif !default;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
